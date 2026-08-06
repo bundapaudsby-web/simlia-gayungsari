@@ -1,4 +1,4 @@
-FROM php:8.2-apache
+FROM php:8.4-apache
 
 # Install system dependencies & PostgreSQL driver
 RUN apt-get update && apt-get install -y \
@@ -21,9 +21,9 @@ WORKDIR /var/www/html
 
 COPY . /var/www/html
 
-# Install PHP dependencies
+# Install PHP dependencies with platform reqs override
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --ignore-platform-reqs --no-dev --optimize-autoloader
 
 # Build Vue 3 Vite assets
 RUN npm install && npm run build
