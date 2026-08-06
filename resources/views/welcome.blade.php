@@ -25,6 +25,22 @@
 .storage-note b{color:#0b6048}.action-wrap{display:flex;gap:5px;flex-wrap:wrap;min-width:190px}.file-drop{border:1px dashed #a9c5d5;background:#f7fbfd;border-radius:12px;padding:16px;text-align:center}.metric-note{font-size:11px;color:var(--muted);margin-top:3px}.empty-action{padding:24px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}.activity{display:grid;gap:10px}.activity>div{padding:12px;border:1px solid var(--line);border-radius:12px}.activity span{display:block;color:var(--muted);font-size:11px;margin-top:3px}.chart-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:10px;color:var(--muted)}.legend span{display:flex;align-items:center;gap:5px}.legend i{width:8px;height:8px;border-radius:50%;display:inline-block}.progress-row{display:grid;grid-template-columns:minmax(160px,1fr) 1fr 55px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid #edf1f4}.progress-track{height:9px;background:#e8eef2;border-radius:999px;overflow:hidden}.progress-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--orange));border-radius:999px}.ledger-positive{color:var(--green);font-weight:800}.ledger-negative{color:var(--red);font-weight:800}
 @media(max-width:700px){.progress-row{grid-template-columns:1fr}.action-wrap{min-width:150px}}
 </style>
+<style>
+/* FIXED BRANDING LOGO SIZE */
+.brand img, #publicLogo, header .brand img {
+  max-height: 42px !important;
+  width: auto !important;
+  max-width: 180px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+</style>
 </head>
 <body>
 <div id="publicSite">

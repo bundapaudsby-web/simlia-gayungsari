@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: simlia-gayungsari-web
+    env: php
+    buildCommand: "composer install --no-dev --optimize-autoloader && npm install && npm run build"
+    startCommand: "php artisan migrate --force && php artisan db:seed --force && php artisan serve --host=0.0.0.0 --port=$PORT"
+    envVars:
+      - key: APP_NAME
+        value: "SIM LIA Gayungsari"
+      - key: APP_ENV
+        value: "production"
+      - key: APP_DEBUG
+        value: "false"
+      - key: DB_CONNECTION
+        value: "pgsql"
+      - key: DB_HOST
+        fromDatabase:
+          name: simlia-postgres
+          property: host
+      - key: DB_DATABASE
+        fromDatabase:
+          name: simlia-postgres
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: simlia-postgres
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: simlia-postgres
+          property: password
+
+databases:
+  - name: simlia-postgres
+    databaseName: simlia_gayungsari
+    user: simlia_user
